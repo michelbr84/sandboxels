@@ -9,7 +9,7 @@
     <meta name="author" content="R74n">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://R74n.com/load.js"></script>
+
     <meta http-equiv='content-language' content='en-us'>
 
     <style>
@@ -673,7 +673,7 @@
                                     // if the pixel at newCoords is the same element as the pixel, ignore
                                     newPixel = pixelMap[newCoords.x][newCoords.y];
                                     if ((!(newPixel.element == pixel.element)) || (newCoords.x == x && newCoords.y ==
-                                            y)) {
+                                        y)) {
                                         if (arg != null) {
                                             var args = arg.split(",");
                                         }
@@ -706,7 +706,7 @@
                                             .length)];
                                     }
                                     if ((newPixel.element != argto) && (argfrom == null || argfrom == newPixel
-                                            .element)) {
+                                        .element)) {
                                         newPixel.element = argto;
                                         newPixel.color = pixelColorPick(newPixel);
                                         newPixel.start = pixelTicks;
@@ -924,21 +924,21 @@
                 pixel.temp += 1;
                 pixelTempCheck(pixel);
                 var burnSpots = [{
-                        x: pixel.x + 1,
-                        y: pixel.y
-                    },
-                    {
-                        x: pixel.x - 1,
-                        y: pixel.y
-                    },
-                    {
-                        x: pixel.x,
-                        y: pixel.y + 1
-                    },
-                    {
-                        x: pixel.x,
-                        y: pixel.y - 1
-                    },
+                    x: pixel.x + 1,
+                    y: pixel.y
+                },
+                {
+                    x: pixel.x - 1,
+                    y: pixel.y
+                },
+                {
+                    x: pixel.x,
+                    y: pixel.y + 1
+                },
+                {
+                    x: pixel.x,
+                    y: pixel.y - 1
+                },
                 ];
                 // loop through burnspots
                 for (var i = 0; i < burnSpots.length; i++) {
@@ -955,7 +955,7 @@
                 }
 
                 if ((pixelTicks - pixel.burnStart > (info.burnTime || 200)) && Math.floor(Math.random() * 100) < (info
-                        .burn || 10)) {
+                    .burn || 10)) {
                     var burnInto = info.burnInto;
                     if (burnInto == undefined) {
                         burnInto = 'fire';
@@ -1556,43 +1556,33 @@
 <body>
     <h1 class="pagetitle">
         <a href="https://sandboxels.R74n.com" class="backbutton">&lt;</a>
-        Sandboxels Lite (by <a href="http://markverb1.xyz">markverb1</a>)</h1><br>
+        Sandboxels Lite (by <a href="http://markverb1.xyz">markverb1</a>)
+    </h1><br>
     <div id="gameDiv">
-            <canvas id="game" width="800" height="600" oncontextmenu="return false;">
-                Your browser does not support the HTML5 canvas tag.
-            </canvas>
-            <div id="underDiv">
-                <div id="stats"></div>
-                <div id="controls">
-                    <div id="toolControls">
-                        <button id="pauseButton" title="Pause/play the simulation" class="controlButton"
-                            onclick='togglePause();focusGame();' on="false">Pause</button><button id="sizeUpButton"
-                            title="Increase the brush size" class="controlButton"
-                            onclick="mouseSize += 2;if (mouseSize > (height > width ? height : width)) { mouseSize = (height > width ? height : width); };focusGame();">+</button><button
-                            id="sizeDownButton" title="Decrease the brush size" class="controlButton"
-                            onclick="mouseSize -= 2;if (mouseSize < 1) { mouseSize = 1; };focusGame();">-</button><button
-                            id="resetButton" title="Clear the entire scene" class="controlButton"
-                            onclick="if (confirm('Are you sure you want to clear the whole scene?')) {clearAll();};focusGame();">Reset</button>
-                    </div>
-                    <div id="elementControls"></div>
+        <canvas id="game" width="800" height="600" oncontextmenu="return false;">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+        <div id="underDiv">
+            <div id="stats"></div>
+            <div id="controls">
+                <div id="toolControls">
+                    <button id="pauseButton" title="Pause/play the simulation" class="controlButton"
+                        onclick='togglePause();focusGame();' on="false">Pause</button><button id="sizeUpButton"
+                        title="Increase the brush size" class="controlButton"
+                        onclick="mouseSize += 2;if (mouseSize > (height > width ? height : width)) { mouseSize = (height > width ? height : width); };focusGame();">+</button><button
+                        id="sizeDownButton" title="Decrease the brush size" class="controlButton"
+                        onclick="mouseSize -= 2;if (mouseSize < 1) { mouseSize = 1; };focusGame();">-</button><button
+                        id="resetButton" title="Clear the entire scene" class="controlButton"
+                        onclick="if (confirm('Are you sure you want to clear the whole scene?')) {clearAll();};focusGame();">Reset</button>
                 </div>
+                <div id="elementControls"></div>
             </div>
+        </div>
     </div>
 
 
     <!-- i like having this but ublock blocks these things anyway -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93720349-6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-93720349-6');
-    </script>
     </h1>
 </body>
 
